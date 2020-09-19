@@ -22,7 +22,7 @@ $ sudo apt install libsdl2-gfx-dev libsdl2-gfx-dev -y
 これでSDL2の導入は完了です．SDL2のヘッダーファイルは`/usr/include/SDL2`にインストールされます．
 
 #### コンパイルオプションについて
-リンクするものは適宜変えてください．
+リンクするもの・他オプションは適宜変えてください．
 ```
 gcc ファイル名 -lm -lSDL2 -SDL2_image -lSDL2_mixer -lSDL2_ttf -lSDL2_ttf -lSDL2_gfx -lSDL2_net
 ```
