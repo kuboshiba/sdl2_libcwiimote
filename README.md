@@ -28,9 +28,46 @@ gcc ファイル名 -lm -lSDL2 -SDL2_image -lSDL2_mixer -lSDL2_ttf -lSDL2_ttf -l
 ```
 
 ## libcwiimote のインストール
+必要なパッケージをインストール
+```
+$ sudo apt install libical-dev libreadline-dev libbluetooth-dev -y
+```
 
+このリポジトリをクローン
 ```
 $ git clone https://github.com/kuboshiba/sdl2_libcwiimote
+```
+libcwiimoteのヘッダーファイルを`/usr/local/include/`にコピー
+```
 $ cd sdl2_libcwiimote/include
 $ sudo cp -r libcwiimote /usr/local/include/
+```
+libcwiimoteの共有ライブラリを`/usr/local/lib/`にコピー
+```
+$ cd ../lib/
+$ sudo cp * /usr/local/lib/
+```
+共有ライブラリのパーミッションとシンボリックリンクを作成
+```
+$ cd /usr/local/lib/
+$ sudo chmod 644 libcwiimote.a
+$ sudo chmod 644 libcwiimote.so.3.1.0
+$ sudo chmod 755 libcwiimote.la
+$ sudo ln -s libcwiimote.so.3.1.0 ./libcwiimote.so
+$ sudo ln -s libcwiimote.so.3.1.0 ./libcwiimote.so.3
+```
+
+`/etc/ld.so.conf`を編集　`/usr/local/lib`を追加
+```
+$ sudo vim /etc/ld.so.conf
+```
+設定を反映する
+```
+$ sudo ldconfig
+```
+
+#### コンパイルオプションについて
+リンクするもの・他オプションは適宜変えてください．
+```
+$ gcc ファイル名 -lm -lcwiimote
 ```
