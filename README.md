@@ -11,7 +11,7 @@ $ sudo apt upgrade -y
 ```
 $ sudo apt install build-essential -y
 ```
-SDL2をインストール
+SDL2と必要なパッケージをインストール
 ```
 $ sudo apt install libsdl2-dev libsdl2-2.0-0 -y
 $ sudo apt install libjpeg-dev libwebp-dev libtiff5-dev libsdl2-image-dev libsdl2-image-2.0-0 -y
