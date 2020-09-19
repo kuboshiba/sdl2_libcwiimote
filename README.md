@@ -32,4 +32,5 @@ gcc ファイル名 -lm -lSDL2 -SDL2_image -lSDL2_mixer -lSDL2_ttf -lSDL2_ttf -l
 ```
 $ git clone https://github.com/kuboshiba/sdl2_libcwiimote
 $ cd sdl2_libcwiimote/include
+$ sudo cp -r libcwiimote /usr/local/include/
 ```
