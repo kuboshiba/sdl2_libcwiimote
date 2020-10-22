@@ -24,7 +24,7 @@ $ sudo apt install libsdl2-gfx-dev libsdl2-gfx-dev -y
 #### コンパイルオプションについて
 リンクするもの・他オプションは適宜変えてください．
 ```
-gcc ファイル名 -lm -lSDL2 -SDL2_image -lSDL2_mixer -lSDL2_ttf -lSDL2_ttf -lSDL2_gfx -lSDL2_net
+gcc ファイル名 -lm -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lSDL2_ttf -lSDL2_gfx -lSDL2_net
 ```
 
 ## libcwiimote のインストール
