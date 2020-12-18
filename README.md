@@ -35,6 +35,7 @@ $ sudo apt install libical-dev libreadline-dev libbluetooth-dev -y
 
 このリポジトリをクローン
 ```
+$ sudo apt install git -y
 $ git clone https://github.com/kuboshiba/sdl2_libcwiimote
 ```
 libcwiimoteのヘッダーファイルを`/usr/local/include/`にコピー
