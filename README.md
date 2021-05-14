@@ -27,7 +27,7 @@ $ sudo apt install libsdl2-gfx-dev libsdl2-gfx-dev -y
 gcc ファイル名 -lm -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lSDL2_ttf -lSDL2_gfx -lSDL2_net
 ```
 
-## libcwiimote のインストール
+## libwiimote のインストール
 必要なパッケージをインストール
 ```
 $ sudo apt install libical-dev libreadline-dev libbluetooth-dev -y
