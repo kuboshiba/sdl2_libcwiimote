@@ -1,17 +1,17 @@
 ## OS
 - Ubuntu 20.04.1 LTS
 
-## SDL2のインストール
-とりあえずパッケージをアップデート・アップグレード
+## Installing SDL2
+First, update/upgrade repo.
 ```
 $ sudo apt update -y
 $ sudo apt upgrade -y
 ```
-ビルドに必要なパッケージをインストール
+Install the packages required for build.
 ```
 $ sudo apt install build-essential -y
 ```
-SDL2と必要なパッケージをインストール
+Install SDL2 and required packages.
 ```
 $ sudo apt install libsdl2-dev libsdl2-2.0-0 -y
 $ sudo apt install libjpeg-dev libwebp-dev libtiff5-dev libsdl2-image-dev libsdl2-image-2.0-0 -y
@@ -19,36 +19,36 @@ $ sudo apt install libmikmod-dev libfishsound1-dev libsmpeg-dev liboggz2-dev lib
 $ sudo apt install libfreetype6-dev libsdl2-ttf-dev libsdl2-ttf-2.0-0 -y
 $ sudo apt install libsdl2-gfx-dev libsdl2-gfx-dev -y
 ```
-これでSDL2の導入は完了です．SDL2のヘッダーファイルは`/usr/include/SDL2`にインストールされます．
+The installation of SDL2 is now complete. SDL2 header files are installed in `/usr/include/SDL2`.
 
-#### コンパイルオプションについて
-リンクするもの・他オプションは適宜変えてください．
+#### About compile options
+Please change the link and other options as appropriate.
 ```
-gcc ファイル名 -lm -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lSDL2_ttf -lSDL2_gfx -lSDL2_net
+gcc [filename] -lm -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lSDL2_ttf -lSDL2_gfx -lSDL2_net
 ```
 
-## libwiimote のインストール
-必要なパッケージをインストール
+## Installing libwiimote
+Install required packages.
 ```
 $ sudo apt install libical-dev libreadline-dev libbluetooth-dev -y
 ```
 
-このリポジトリをクローン
+clone this repository.
 ```
 $ sudo apt install git -y
 $ git clone https://github.com/kuboshiba/sdl2_libcwiimote
 ```
-libcwiimoteのヘッダーファイルを`/usr/local/include/`にコピー
+Copy libcwiimote header files to `/usr/local/include/`
 ```
 $ cd sdl2_libcwiimote/include
 $ sudo cp -r libcwiimote /usr/local/include/
 ```
-libcwiimoteの共有ライブラリを`/usr/local/lib/`にコピー
+Copy the libcwiimote shared library to `/usr/local/lib/`
 ```
 $ cd ../lib/
 $ sudo cp * /usr/local/lib/
 ```
-共有ライブラリのパーミッションとシンボリックリンクを作成
+Create shared library permissions and symbolic links.
 ```
 $ cd /usr/local/lib/
 $ sudo chmod 644 libcwiimote.a
@@ -58,17 +58,17 @@ $ sudo ln -s libcwiimote.so.3.1.0 ./libcwiimote.so
 $ sudo ln -s libcwiimote.so.3.1.0 ./libcwiimote.so.3
 ```
 
-`/etc/ld.so.conf`を編集　`/usr/local/lib`を追加
+Edit `/etc/ld.so.conf` Add `/usr/local/lib`
 ```
 $ sudo vim /etc/ld.so.conf
 ```
-設定を反映する
+Apply settings.
 ```
 $ sudo ldconfig
 ```
 
-#### コンパイルオプションについて
-リンクするもの・他オプションは適宜変えてください．
+#### About compile options
+Please change the link and other options as appropriate.
 ```
-$ gcc ファイル名 -lm -lcwiimote
+$ gcc [filename] -lm -lcwiimote
 ```
